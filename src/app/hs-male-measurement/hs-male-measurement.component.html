@@ -1,0 +1,33 @@
+<div class="card w-100">
+    <div class="card-body">
+        <h5 class="card-title">Male Measurement</h5>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputState">Dress</label>
+                    <select id="inputState" class="form-control" [(ngModel)]="measurement.dress" name="dress">
+                        <option selected value="shirt">Shirt</option>
+                        <option value="towsor">Towsor</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputFit">Fit</label>
+                    <select id="inputFit" class="form-control">
+                        <option selected>Slim Fit</option>
+                        <option>Normal Fit</option>
+                        <option>Loose Fit</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div class="form-row">
+                    <div class="form-group col-md-2" *ngFor="let measure of measurement.measure | keyvalue">
+                        <label for="inputCollar">{{measure.key | titlecase | replace: '_':' '}}</label>
+                        <input type="text"  class="form-control" placeholder="0" 
+                        name="collar" value="{{measure.value}}">
+                    </div>                    
+                </div>
+            </div>            
+        </form>
+    </div>
+</div>

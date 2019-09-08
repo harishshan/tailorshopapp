@@ -1,1 +1,79 @@
-<p>hs-customer works!</p>
+<div class="card w-100">
+    <div class="card-body">
+        <h5 class="card-title">Customer</h5>
+        <form (ngSubmit)="onClickme()" autocomplete="off">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputName">Name(Customer Id)</label>
+                    <input type="text" id="inputName" class="form-control" [disabled]="editdisabled"
+                        [(ngModel)]="customer.Name" name="name" placeholder="Name">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputPhoneNumber">Phone Number</label>
+                    <input type="text" id="inputPhoneNumber" class="form-control" [disabled]="editdisabled"
+                        [(ngModel)]="customer.phonenumber" name="phonenumber" placeholder="xxxxx xxxxx">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputGender">Gender</label>
+                    <select id="inputGender" class="form-control" [disabled]="editdisabled"
+                        [(ngModel)]="customer.gender" name="gender">
+                        <option selected value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress">Address</label>
+                    <input type="text" id="inputAddress" class="form-control" [disabled]="editdisabled"
+                        [(ngModel)]="customer.address" name="address" placeholder="Address">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputCity">City</label>
+                    <input type="text" id="inputCity" class="form-control" [disabled]="editdisabled"
+                        [(ngModel)]="customer.city" name="city" placeholder="City">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control" [disabled]="editdisabled" [(ngModel)]="customer.state"
+                        name="state">
+                        <option selected>Tamil Nadu</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="inputRelation">Relation</label>
+                    <select id="inputRelation" class="form-control" [disabled]="editdisabled"
+                        [(ngModel)]="customer.relation" name="relation">
+                        <option>Select Relations</option>
+                        <option>Son</option>
+                        <option>Daughter</option>
+                        <option>Father</option>
+                        <option>Mother</option>
+                        <option>Sister</option>
+                        <option>Brother</option>
+                        <option>Wife</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputRelationName">Customer Id</label>
+                    <select id="inputRelationName" class="form-control" [disabled]="editdisabled"
+                        [(ngModel)]="customer.relationName" name="relationName">
+                        <option>Select CustomerId</option>
+                        <option>Harish</option>
+                        <option>Jagan</option>
+                        <option>Mega</option>
+                        <option>Sabari</option>
+                        <option>Sathish</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngFor="let measurement of customer.measurementList">
+    <app-hs-male-measurement *ngIf="customer.gender == 'male'" [measurement]="measurement" name="measurement"></app-hs-male-measurement>
+    <app-hs-female-measurement *ngIf="customer.gender == 'female'" [measurement]="measurement" name="measurement"></app-hs-female-measurement>
+</div>
+

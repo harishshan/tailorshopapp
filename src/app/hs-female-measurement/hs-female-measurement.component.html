@@ -1,0 +1,93 @@
+<div class="card w-100">
+    <div class="card-body">
+        <h5 class="card-title">Female Measurement</h5>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputState">Dress</label>
+                    <select id="inputState" class="form-control" [(ngModel)]="dress" name="dress">
+                        <option selected value="blouse">Blouse</option>
+                        <option value="salwar">Salwar</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputFit">Fit</label>
+                    <select id="inputFit" class="form-control">
+                        <option selected>Slim Fit</option>
+                        <option>Loose Fit</option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="dress== 'blouse'">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Around Bust</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Below Bust</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Sholder</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Sleeve length</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Sleeve Loose</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Around Arm Hole</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Front Neck Depth</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Back Neck Depth</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Length</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="dress== 'salwar'">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Sholder</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Around Breast</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Around waist</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputName">Around Hips</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPhoneNumber">Waist to Ankle length</label>
+                        <input type="text" class="form-control" placeholder="0">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
